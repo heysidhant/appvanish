@@ -3,6 +3,5 @@ build/
 DerivedData/
 *.xcuserstate
 xcuserdata/
-PIXTAMER_NEXT_PLAN.md
 dist/
 .wrangler/
