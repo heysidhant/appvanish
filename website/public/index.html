@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Vanish: free Mac app uninstaller</title>
+  <meta name="description" content="Drop a Mac app in the bin. App Vanish finds the files it left behind and moves the ones you choose to the Trash. Free and open source.">
+  <link rel="canonical" href="https://appvanish.pages.dev/">
+  <meta name="theme-color" content="#0e73ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="App Vanish">
+  <meta property="og:title" content="App Vanish: free Mac app uninstaller">
+  <meta property="og:description" content="Delete a Mac app and everything it left behind.">
+  <meta property="og:url" content="https://appvanish.pages.dev/">
+  <meta property="og:image" content="https://appvanish.pages.dev/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="App Vanish icon: an app dropping into a bin, with a sparkle">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="36" height="36">App Vanish</a>
+      <a class="nav-link" href="https://github.com/heysidhant/appvanish">GitHub</a>
+    </nav>
+    <div class="hero">
+      <div>
+        <h1>Delete a Mac app and everything it left behind</h1>
+        <p class="lede">Drop an app in the bin. App Vanish finds its leftover files and moves the ones you choose to the Trash.</p>
+        <p class="actions"><a class="button" href="https://github.com/heysidhant/appvanish/releases/download/v1.0.0/AppVanish-1.0.0.dmg">Download for Mac</a></p>
+        <p class="fineprint">Free and open source. Version 1.0.0, 1 MB. Needs macOS 14 or later.</p>
+      </div>
+      <svg class="scene" viewBox="0 0 440 460" role="img" aria-label="Leftover folders such as Caches and Preferences dropping into a bin">
+        <g>
+          <g class="chip " style="--fall:295px">
+            <rect x="176" y="18" width="88" height="36" rx="10"/>
+            <text x="220" y="41">Logs</text>
+          </g>
+          <g class="chip hot" style="--fall:255px">
+            <rect x="51" y="62" width="190" height="36" rx="10"/>
+            <text x="146" y="85">Application Support</text>
+          </g>
+          <g class="chip " style="--fall:255px">
+            <rect x="280" y="62" width="104" height="36" rx="10"/>
+            <text x="332" y="85">Caches</text>
+          </g>
+          <g class="chip " style="--fall:210px">
+            <rect x="55" y="108" width="138" height="36" rx="10"/>
+            <text x="124" y="131">Preferences</text>
+          </g>
+          <g class="chip hot" style="--fall:210px">
+            <rect x="259" y="108" width="130" height="36" rx="10"/>
+            <text x="324" y="131">Saved State</text>
+          </g>
+        </g>
+        <rect class="lid" x="60" y="190" width="320" height="26" rx="13"/>
+        <path class="bin-body" d="M78 226h284a14 14 0 0 1 14 16l-32 186a22 22 0 0 1-22 18H118a22 22 0 0 1-22-18L64 242a14 14 0 0 1 14-16Z"/>
+        <rect class="bin-slot" x="148" y="276" width="16" height="118" rx="8"/>
+        <rect class="bin-slot" x="212" y="276" width="16" height="118" rx="8"/>
+        <rect class="bin-slot" x="276" y="276" width="16" height="118" rx="8"/>
+      </svg>
+    </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="band band-paper" aria-labelledby="how">
+      <div class="wrap">
+        <h2 id="how">Three steps, and you stay in charge</h2>
+        <ol class="steps">
+          <li><h3>Drop an app</h3><p>Drag it onto the bin, or click to choose one.</p></li>
+          <li><h3>Review the list</h3><p>See every file App Vanish found, with its size and location.</p></li>
+          <li><h3>Remove what you choose</h3><p>Ticked files move to the Trash, so you can put them back.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="found">
+      <div class="wrap two">
+        <div>
+          <h2 id="found">What it looks for</h2>
+          <p>Mac apps leave files across your Library. App Vanish reads the app's identity, then checks the usual places.</p>
+        </div>
+        <ul class="found">
+          <li>Application Support</li>
+          <li>Preferences</li>
+          <li>Caches</li>
+          <li>Logs</li>
+          <li>Crash reports</li>
+          <li>Saved state</li>
+          <li>Containers</li>
+          <li>Group Containers</li>
+          <li>Cookies and web data</li>
+          <li>LaunchAgents</li>
+          <li>LaunchDaemons</li>
+          <li>Privileged helpers</li>
+          <li>Install receipts</li>
+          <li>Helper apps</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band band-paper" aria-labelledby="careful">
+      <div class="wrap two">
+        <div>
+          <h2 id="careful">Careful with your Mac</h2>
+          <p>An uninstaller touches real files, so App Vanish leaves the final call to you. Check the list before you remove anything.</p>
+        </div>
+        <div class="careful">
+          <div><h3>Unsure files start unticked</h3><p>Anything that might belong to another app waits for your decision.</p></div>
+          <div><h3>Open apps are never force quit</h3><p>App Vanish asks an app to quit, so you can save your work first.</p></div>
+          <div><h3>Apple's apps are left alone</h3><p>System apps and protected folders are refused.</p></div>
+          <div><h3>Your data stays on your Mac</h3><p>There's no account or analytics, and the app makes no network connections.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-ink" aria-labelledby="get">
+      <div class="wrap two">
+        <div>
+          <h2 id="get">Install App Vanish</h2>
+          <p>Open the DMG and drag App Vanish to Applications. Builds are signed and notarized by Apple, and run on Apple silicon and Intel.</p>
+          <p class="actions"><a class="button" href="https://github.com/heysidhant/appvanish/releases/download/v1.0.0/AppVanish-1.0.0.dmg">Download for Mac</a></p>
+        </div>
+        <div>
+          <h3>Or use Homebrew</h3>
+          <pre class="code" tabindex="0" aria-label="Homebrew install commands"><code>brew tap heysidhant/tap
+brew trust heysidhant/tap
+brew install --cask appvanish</code></pre>
+          <p class="source-note">Prefer to build it yourself? The <a href="https://github.com/heysidhant/appvanish">source is on GitHub</a> under the MIT license.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>Made by <a href="https://sidhantsinha.com">Sidhant Sinha</a></span>
+    <span>Not affiliated with AppCleaner or FreeMacSoft.</span>
+    <a href="https://github.com/heysidhant/appvanish/issues">Support</a>
+  </footer>
+</body>
+</html>
