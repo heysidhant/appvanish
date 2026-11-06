@@ -233,10 +233,10 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/AppVanish-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "App Vanish";
 				INFOPLIST_KEY_CFBundleName = "App Vanish";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "App Vanish asks Finder to move apps that need your password to the Trash.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 App Vanish contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -262,10 +262,10 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/AppVanish-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "App Vanish";
 				INFOPLIST_KEY_CFBundleName = "App Vanish";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "App Vanish asks Finder to move apps that need your password to the Trash.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 App Vanish contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

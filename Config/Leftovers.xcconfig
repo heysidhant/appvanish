@@ -1,0 +1,15 @@
+// The sandboxed Mac App Store edition of App Vanish.
+// Used with: xcodebuild -xcconfig Config/Leftovers.xcconfig
+PRODUCT_BUNDLE_IDENTIFIER = com.heysidhant.AppVanishLeftovers
+PRODUCT_NAME = AppVanish
+INFOPLIST_KEY_CFBundleDisplayName = App Vanish
+INFOPLIST_KEY_CFBundleName = App Vanish
+INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO
+INFOPLIST_FILE =
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = APP_STORE
+CODE_SIGN_ENTITLEMENTS = Config/AppVanishLeftovers.entitlements
+CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO
+ENABLE_APP_SANDBOX = YES
+ENABLE_HARDENED_RUNTIME = YES
+// The uninstaller's screens and quit logic are left out of this edition.
+EXCLUDED_SOURCE_FILE_NAMES = ContentView.swift UninstallModel.swift

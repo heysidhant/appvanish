@@ -40,6 +40,14 @@ NOTARY_PROFILE=<profile> scripts/make-dmg.sh     # also notarize and staple
 
 The script signs with a Developer ID certificate if one is in your keychain. Without one, the build is ad-hoc signed.
 
+## App Store edition
+
+The Mac App Store edition finds files left by apps that were already deleted. It runs in the App Sandbox, so it can't remove apps. Its settings are in `Config/Leftovers.xcconfig`, which leaves the uninstaller's code out of that build. See [docs/APP_STORE.md](docs/APP_STORE.md).
+
+```sh
+scripts/make-appstore.sh    # dist/AppStore/AppVanish.pkg
+```
+
 ## What it looks for
 
 App Vanish reads the app's bundle identifier and name, then checks the usual Library locations:

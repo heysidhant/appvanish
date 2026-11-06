@@ -1,5 +1,19 @@
 import AppKit
 
+struct RemovalFailure: Equatable, Identifiable, Sendable {
+    var id: String { name + reason }
+    var name: String
+    var reason: String
+}
+
+/// The user's real Home folder. In the sandbox, NSHomeDirectory() points at the app's container.
+enum RealHome {
+    static let path: String = {
+        guard let entry = getpwuid(getuid()), let dir = entry.pointee.pw_dir else { return NSHomeDirectory() }
+        return String(cString: dir)
+    }()
+}
+
 enum TrashError: LocalizedError {
     case finderNotAllowed
     case cancelled
@@ -20,11 +34,15 @@ enum TrashError: LocalizedError {
 enum TrashMover {
     /// Moves to the Trash directly. For items that need an admin password, Finder asks for it.
     static func moveToTrash(_ url: URL) throws {
+        #if APP_STORE
+        try FileManager.default.trashItem(at: url, resultingItemURL: nil)
+        #else
         do {
             try FileManager.default.trashItem(at: url, resultingItemURL: nil)
         } catch where isPermissionError(error) {
             try askFinderToTrash(url)
         }
+        #endif
     }
 
     static func isPermissionError(_ error: Error) -> Bool {
@@ -38,6 +56,7 @@ enum TrashMover {
         return false
     }
 
+    #if !APP_STORE
     /// Sent as an Apple event rather than a script, so a file name can never become code.
     private static func askFinderToTrash(_ url: URL) throws {
         let finder = NSAppleEventDescriptor(bundleIdentifier: "com.apple.finder")
@@ -65,4 +84,5 @@ enum TrashMover {
         }
         if FileManager.default.fileExists(atPath: url.path) { throw TrashError.stillThere }
     }
+    #endif
 }

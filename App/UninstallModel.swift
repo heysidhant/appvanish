@@ -1,12 +1,6 @@
 import AppKit
 import Observation
 
-struct RemovalFailure: Equatable, Identifiable, Sendable {
-    var id: String { name + reason }
-    var name: String
-    var reason: String
-}
-
 @MainActor
 @Observable
 final class UninstallModel {

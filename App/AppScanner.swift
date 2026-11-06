@@ -289,7 +289,7 @@ enum AppScanner {
     }
 
     static func displayPath(for url: URL) -> String {
-        let home = NSHomeDirectory()
+        let home = RealHome.path
         let path = url.path
         if path == home { return "~" }
         if path.hasPrefix(home + "/") {
@@ -298,7 +298,7 @@ enum AppScanner {
         return path
     }
 
-    private static func allocatedSize(of url: URL) -> Int64 {
+    static func allocatedSize(of url: URL) -> Int64 {
         let keys: Set<URLResourceKey> = [.totalFileAllocatedSizeKey, .fileAllocatedSizeKey, .isDirectoryKey]
         if let values = try? url.resourceValues(forKeys: keys), values.isDirectory != true {
             return Int64(values.totalFileAllocatedSize ?? values.fileAllocatedSize ?? 0)

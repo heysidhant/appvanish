@@ -9,7 +9,7 @@ enum RemovalGuard {
         let path = url.path
         guard !path.isEmpty, path != "/" else { return false }
 
-        let home = URL(fileURLWithPath: NSHomeDirectory()).resolvingSymlinksInPath().standardizedFileURL.path
+        let home = URL(fileURLWithPath: RealHome.path).resolvingSymlinksInPath().standardizedFileURL.path
         if path == home { return false }
 
         let blocked = ["/System", "/usr", "/bin", "/sbin", "/Library/Apple", "/dev", "/etc", "/private/etc"]
