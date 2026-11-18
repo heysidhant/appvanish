@@ -1,21 +1,50 @@
+<div align="center">
+
+<img src="App/Assets.xcassets/AppIcon.appiconset/icon_256.png" width="128" height="128" alt="App Vanish icon">
+
 # App Vanish
 
-App Vanish is a small open-source Mac utility. Drop an application on the window and it lists the files that belong to that app. Remove moves the checked files to the Trash.
+**Delete a Mac app and everything it left behind.**
 
-**Website:** [appvanish.pages.dev](https://appvanish.pages.dev)
+Drop an app on the bin. App Vanish finds its leftover files across your Library,<br>
+and moves the ones you choose to the Trash. Free, open source, and nothing leaves your Mac.
+
+[![Download on the Mac App Store](https://img.shields.io/badge/Download_on_the-Mac_App_Store-0D96F6?style=for-the-badge&logo=apple&logoColor=white)](https://apps.apple.com/app/app-vanish/id6831544178)
+[![Download DMG](https://img.shields.io/badge/Download-DMG-FFB020?style=for-the-badge&logo=github&logoColor=white)](https://github.com/heysidhant/appvanish/releases/latest)
+
+[![GitHub stars](https://img.shields.io/github/stars/heysidhant/appvanish?style=flat)](https://github.com/heysidhant/appvanish/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+![macOS 14+](https://img.shields.io/badge/macOS-14%2B-black?logo=apple)
+![Swift](https://img.shields.io/badge/Swift-SwiftUI-F05138?logo=swift&logoColor=white)
+
+[Website](https://appvanish.pages.dev) · [Mac App Store](https://apps.apple.com/app/app-vanish/id6831544178) · [Report a bug](https://github.com/heysidhant/appvanish/issues)
 
 ![App Vanish listing files for review, with sample data](docs/screenshot.png)
 
+</div>
+
+Dragging an app to the Trash leaves its caches, preferences, containers, launch agents and more behind. App Vanish finds them, shows you each file with its size and location, and lets you decide what goes.
+
+If App Vanish saved you some disk space, a ⭐ helps other people find it.
+
 It is not affiliated with AppCleaner or FreeMacSoft.
+
+## Two editions
+
+| | Full uninstaller | Mac App Store edition |
+|---|---|---|
+| Removes the app itself | Yes | No, the sandbox doesn't allow it |
+| Finds leftovers of an app you drop in | Yes | No |
+| Finds leftovers of apps you already deleted | No | Yes |
+| LaunchAgents, LaunchDaemons, helpers, receipts | Yes | No |
+| Sandboxed | No | Yes |
+| Get it | [DMG](https://github.com/heysidhant/appvanish/releases/latest) or Homebrew | [Mac App Store](https://apps.apple.com/app/app-vanish/id6831544178) |
+
+Both are free and built from this repository.
 
 ## Install
 
-Two editions, both free:
-
-- **Full uninstaller** (removes apps and their leftovers): DMG or Homebrew, below.
-- **[Mac App Store edition](https://apps.apple.com/app/app-vanish/id6831544178)** (cleans up after apps you already deleted). See [App Store edition](#app-store-edition).
-
-Download the latest `AppVanish-<version>.dmg` from [Releases](https://github.com/heysidhant/appvanish/releases), open it and drag App Vanish to Applications. Builds are signed with a Developer ID and notarized by Apple.
+**Full uninstaller.** Download the latest `AppVanish-<version>.dmg` from [Releases](https://github.com/heysidhant/appvanish/releases), open it and drag App Vanish to Applications. Builds are signed with a Developer ID and notarized by Apple.
 
 Or with [Homebrew](https://github.com/heysidhant/homebrew-tap):
 
@@ -24,6 +53,8 @@ brew tap heysidhant/tap
 brew trust heysidhant/tap
 brew install --cask appvanish
 ```
+
+**Mac App Store edition.** [Get it on the Mac App Store](https://apps.apple.com/app/app-vanish/id6831544178). Updates arrive automatically.
 
 ## Build
 
@@ -72,6 +103,19 @@ Apple's own system apps are refused. Review the list before removing anything. F
 - App Vanish makes no network connections.
 
 Some other apps' containers stay hidden until System Settings has Full Disk Access turned on for App Vanish.
+
+## Contributing
+
+Bug reports and pull requests are welcome.
+
+- Found an app whose leftovers App Vanish misses? [Open an issue](https://github.com/heysidhant/appvanish/issues/new) with the app's name and where its files were. That's the most useful report there is.
+- Look for issues labelled [`good first issue`](https://github.com/heysidhant/appvanish/labels/good%20first%20issue) or [`help wanted`](https://github.com/heysidhant/appvanish/labels/help%20wanted).
+- Run the tests before opening a PR (see [Build](#build)).
+- Safety rules come first: anything that might belong to another app must start unticked, and nothing is ever deleted outright.
+
+## More from the maker
+
+[Pixtamer](https://github.com/heysidhant/pixtamer) is a free, open-source Mac app that turns a folder of images into web-ready JPEG, PNG, WebP and AVIF files.
 
 ## License
 
