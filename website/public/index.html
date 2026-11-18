@@ -20,6 +20,23 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "App Vanish",
+    "url": "https://appvanish.pages.dev/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS 14 or later",
+    "softwareVersion": "1.0.0",
+    "description": "Delete a Mac app and the files it left behind, or clean up after apps you already deleted.",
+    "downloadUrl": "https://github.com/heysidhant/appvanish/releases/download/v1.0.0/AppVanish-1.0.0.dmg",
+    "installUrl": "https://apps.apple.com/app/app-vanish/id6831544178",
+    "license": "https://opensource.org/license/mit",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Sidhant Sinha", "url": "https://sidhantsinha.com" }
+  }
+  </script>
 </head>
 <body>
   <header class="top">
@@ -32,7 +49,7 @@
       <div>
         <h1>Delete a Mac app and everything it left behind</h1>
         <p class="lede">Drop an app in the bin. App Vanish finds its leftover files and moves the ones you choose to the Trash.</p>
-        <p class="actions"><a class="button" href="https://github.com/heysidhant/appvanish/releases/download/v1.0.0/AppVanish-1.0.0.dmg">Download for Mac</a></p>
+        <p class="actions"><a class="button" href="https://github.com/heysidhant/appvanish/releases/download/v1.0.0/AppVanish-1.0.0.dmg">Download for Mac</a><a class="button-alt" href="https://apps.apple.com/app/app-vanish/id6831544178">Mac App Store edition</a></p>
         <p class="fineprint">Free and open source. Version 1.0.0, 1 MB. Needs macOS 14 or later.</p>
       </div>
       <svg class="scene" viewBox="0 0 440 460" role="img" aria-label="Leftover folders such as Caches and Preferences dropping into a bin">
@@ -124,14 +141,19 @@
       <div class="wrap two">
         <div>
           <h2 id="get">Install App Vanish</h2>
-          <p>Open the DMG and drag App Vanish to Applications. Builds are signed and notarized by Apple, and run on Apple silicon and Intel.</p>
+          <p>There are two editions. Both are free, and both run on Apple silicon and Intel.</p>
+          <h3 class="edition">Full uninstaller</h3>
+          <p>Removes an app and its leftovers in one go. Open the DMG and drag App Vanish to Applications. It's signed and notarized by Apple.</p>
           <p class="actions"><a class="button" href="https://github.com/heysidhant/appvanish/releases/download/v1.0.0/AppVanish-1.0.0.dmg">Download for Mac</a></p>
-        </div>
-        <div>
-          <h3>Or use Homebrew</h3>
+          <p class="source-note">Or use Homebrew:</p>
           <pre class="code" tabindex="0" aria-label="Homebrew install commands"><code>brew tap heysidhant/tap
 brew trust heysidhant/tap
 brew install --cask appvanish</code></pre>
+        </div>
+        <div>
+          <h3 class="edition">Mac App Store edition</h3>
+          <p>Cleans up after apps you've already deleted. It runs in Apple's App Sandbox, so it can't remove apps itself. Move an app to the Trash, then let App Vanish find what it left behind. Updates arrive through the App Store.</p>
+          <p class="actions"><a class="button" href="https://apps.apple.com/app/app-vanish/id6831544178">Get it on the Mac App Store</a></p>
           <p class="source-note">Prefer to build it yourself? The <a href="https://github.com/heysidhant/appvanish">source is on GitHub</a> under the MIT license.</p>
         </div>
       </div>

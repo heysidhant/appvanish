@@ -142,6 +142,32 @@ h3 {
   filter: brightness(1.06);
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.button-alt {
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  text-underline-offset: 4px;
+}
+
+.button-alt:hover {
+  text-decoration-thickness: 2px;
+}
+
+.edition {
+  margin-top: 28px;
+}
+
+.two > div > .edition:first-child {
+  margin-top: 0;
+}
+
 .nav-link {
   font-size: 1rem;
   text-decoration: none;

@@ -10,6 +10,11 @@ It is not affiliated with AppCleaner or FreeMacSoft.
 
 ## Install
 
+Two editions, both free:
+
+- **Full uninstaller** (removes apps and their leftovers): DMG or Homebrew, below.
+- **[Mac App Store edition](https://apps.apple.com/app/app-vanish/id6831544178)** (cleans up after apps you already deleted). See [App Store edition](#app-store-edition).
+
 Download the latest `AppVanish-<version>.dmg` from [Releases](https://github.com/heysidhant/appvanish/releases), open it and drag App Vanish to Applications. Builds are signed with a Developer ID and notarized by Apple.
 
 Or with [Homebrew](https://github.com/heysidhant/homebrew-tap):
