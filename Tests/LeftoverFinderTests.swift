@@ -29,6 +29,24 @@ final class LeftoverFinderTests: XCTestCase {
         XCTAssertNil(LeftoverFinder.bundleIdentifier(fromItemNamed: "com.two"))
     }
 
+    func testReadsCountryCodeAndGenericPrefixes() {
+        // Country codes: real Mac apps whose identifiers were skipped before 1.0.1.
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "ru.keepcoder.Telegram.plist"), "ru.keepcoder.Telegram")
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "pl.maketheweb.cleanshotx"), "pl.maketheweb.cleanshotx")
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "at.obdev.LaunchBar.savedState"), "at.obdev.LaunchBar")
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "cc.ffitch.shottr"), "cc.ffitch.shottr")
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "it.bloop.airflow2.plist"), "it.bloop.airflow2")
+        // Generic domains.
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "info.example.tool"), "info.example.tool")
+        XCTAssertEqual(LeftoverFinder.bundleIdentifier(fromItemNamed: "studio.example.app.plist"), "studio.example.app")
+        // Still not identifiers: unknown or non-letter first parts.
+        XCTAssertNil(LeftoverFinder.bundleIdentifier(fromItemNamed: "v1.2.3"))
+        XCTAssertNil(LeftoverFinder.bundleIdentifier(fromItemNamed: "12.34.56"))
+        XCTAssertNil(LeftoverFinder.bundleIdentifier(fromItemNamed: "backup.2026.zip"))
+        XCTAssertNil(LeftoverFinder.bundleIdentifier(fromItemNamed: "x.example.app"))
+        XCTAssertNil(LeftoverFinder.bundleIdentifier(fromItemNamed: "ü1.example.app"))
+    }
+
     func testRecognisesInstalledAppsAndTheirHelpers() {
         let installed: Set<String> = ["com.example.demo", "com.other.suite.mail"]
         XCTAssertTrue(LeftoverFinder.belongsToInstalledApp("com.example.demo", installed: installed))

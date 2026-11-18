@@ -23,10 +23,20 @@ enum LeftoverFinder {
     ]
 
     private static let suffixes = [".savedState", ".binarycookies", ".plist"]
-    private static let prefixes: Set<String> = [
-        "ai", "app", "ch", "cn", "co", "com", "de", "dev", "eu", "fr", "in", "io", "jp",
-        "me", "net", "nl", "org", "se", "sh", "tv", "uk", "us", "xyz"
+    /// Generic top-level domains used to start bundle identifiers. Country codes such as
+    /// `ru` or `pl` aren't listed: any two-letter first part counts, see `isDomainPrefix`.
+    private static let genericPrefixes: Set<String> = [
+        "app", "biz", "cloud", "com", "design", "dev", "edu", "info", "net", "one", "org",
+        "pro", "studio", "tech", "xyz"
     ]
+
+    /// True for a country code (exactly two ASCII letters, like `ru` in ru.keepcoder.Telegram)
+    /// or a known generic domain.
+    static func isDomainPrefix(_ part: Substring) -> Bool {
+        let lowered = part.lowercased()
+        if lowered.count == 2, lowered.allSatisfy({ $0.isASCII && $0.isLetter }) { return true }
+        return genericPrefixes.contains(lowered)
+    }
 
     /// The bundle identifier in a file name, or nil when the name doesn't clearly contain one.
     static func bundleIdentifier(fromItemNamed name: String) -> String? {
@@ -41,7 +51,7 @@ enum LeftoverFinder {
         let parts = candidate.split(separator: ".", omittingEmptySubsequences: false)
         guard parts.count >= 3,
               parts.allSatisfy({ !$0.isEmpty }),
-              prefixes.contains(parts[0].lowercased()),
+              isDomainPrefix(parts[0]),
               !candidate.contains(" ")
         else { return nil }
         return candidate
